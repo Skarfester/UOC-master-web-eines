@@ -1,27 +1,64 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+	<meta name="description" content="Recetas de cocina vegana">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"> -->
+    <title>Crema de boniato al curry · Receta</title>
+	<include src="./views/_favicon.html"></include>
   </head>
   <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title"><i class="fas fa-university"> Hola UOC</i></h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
+	<include src="./views/_header.html">{"titol":"Crema de boniato al curry"}</include>
+    <main>
+		<article>
+			<p><em>Receta de Virginia García publicada originalmente en <a href="https://creativegan.net/archives/crema-de-boniato-al-curry/">creativegan.net</a></em></p>
+			<ol>
+				<li><strong>Dificultad:</strong> fácil</li>
+				<li><strong>Tiempo de preparación:</strong> 30 minutos</li>
+				<li><strong>Raciones:</strong> para 4 personas</li>
+			</ol>
+			<h2>Ingredientes</h2>	
+			<ul>
+				<li>50 g de cebolla morada (1 pequeña o ½ normal)</li>
+				<li>80 g de puerro (½ puerro mediano)</li>
+				<li>150 g de calabacín (½ calabacín mediano)</li>
+				<li>475 g de boniato rojo (batata) (1 mediano-grande)</li>
+				<li>¼ de cucharadita de semillas de hinojo</li>
+				<li>¼ de cucharadita de curry en polvo</li>
+				<li>¼ de cucharadita de sal</li>
+				<li>2 cucharadas de aceite de oliva</li>
+				<li>100 ml de leche de soja u otra bebida vegetal sin azucarar y sin sabores (opcional)</li>
+				<li>un trocito de coliflor cruda rallada y un poco de cebolleta picada para servir (opcional)</li>
+			</ul>
+			<h2>Preparación</h2>
+			<p>Calienta el aceite en una cacerola mediana a fuego medio.</p>
+			<p>Pica fina la cebolla y añádela al aceite. Remuévelo y tápalo.</p>
+			<p>Pica fino el puerro y agrégalo también a la cacerola, removiendo y tapando. Añade también una pizca de sal y el hinojo.</p>
+			<p>Pela el calabacín y córtalo en trocitos medianos-pequeños. Añádelo a la cacerola. Remuévelo bien. Si ves que la cebolla o el puerro se están tostando rápidamente, baja un poco el fuego. Vuelve a tapar la cacerola.</p>
+			<p>Pela el boniato, lávalo y córtalo en trozos medianos-pequeños (como de 1,5 cm de lado). Añádelo a la cacerola junto con el curry y resto de sal y mézclalo bien.</p>
+			<p>Añade suficiente agua como para cubrir todos los ingredientes (en mi caso 2 tazas y media), ponlo a fuego fuerte, tapado, y cuando empiece a hervir déjalo a fuego medio-bajo 12-15 minutos, o hasta que el boniato esté tierno (prueba a pincharlo con un tenedor).</p>
+			<p>Cuando el boniato esté tierno apaga el fuego, retira la cacerola y bátelo todo junto 2-3 minutos, añadiendo la leche vegetal (es opcional, hará la crema más sedosa), hasta que quede una crema fina y sin grumos. Pruébalo y añade un poco más de sal si fuera necesario (para mi gusto una pizca más). Puedes pasarla después por un colador fino para una textura más suave y sedosa.</p>
+			<p>Sírvelo caliente con picatostes, panes crujientes, una ensalada fresca, etc. Puedes poner por encima nata vegetal para cocinar, frutos secos, o como he hecho yo, coliflor rallada y cebolleta picada fina.</p>
+			<h2>Observaciones y consejos</h2>
+			<p>El boniato o batata es una de esas cosas que suelen pasar desapercibidas en la frutería pero que a mí siempre me llaman la atención. Debajo de esa piel de aspecto duro y sucio se esconde una delicia con un sabor a medio camino entre la zanahoria, la calabaza y la patata, suave y dulce. En muchos sitios se usa para preparaciones dulces, igual que hacemos a veces con la zanahoria y la calabaza. Está bueno de todas formas, asado, cocido, al vapor…</p>
+			<p>Es un buen ingrediente para cremas y sopas, es cremoso como la patata y la calabaza, ligeramente dulce como la zanahoria, y combina estupendamente con cualquier verdura u hortaliza de invierno. Esta crema queda especialmente buena con la combinación de boniato + calabacín + cebolla + puerro, pero por supuesto se pueden variar ingredientes para hacer cada vez una crema diferente. Algunas cosas que puedes hacer para variarla:</p>
+			<ul>
+				<li><p>En lugar de curry utiliza otra mezcla de especias. Por ejemplo ras-el-hanout o garam masala. Cualquiera de los dos queda muy bien.</p></li>
+				<li><p>Añade 1 cucharada de ketchup al sofrito de cebolla y puerro. Se nota en el color y en el sabor ligeramente, dando un toque especial a la crema. Prueba también con sriracha, gochujang o sambal si lo quieres picante.</p></li>
+				<li><p>Añade 1 pimiento asado y cortado en trocitos, le dará muy buen sabor y ayuda a que la crema tome un color más vivo.</p></li>
+				<li><p>Añade un par de dientes de ajo asado, es más suave que usar ajos frescos en el sofrito.</p></li>
+				<li><p>Utiliza tahini blanco en lugar de leche vegetal para un sabor más especial, a sésamo y frutos secos, y un cremor extra (añade sólo 1-2 cucharadas).</p></li>
+				<li><p>Cambia la cebolla y el puerro por cebolleta fresca y/o ajetes tiernos.</p></li>
+				<li><p>Utiliza un trocito de hinojo fresco en lugar (o además) de las semillas de hinojo, para un toque anisado y dulce.</p></li>
+			</ul>
+			<p>Este otoño-invierno estoy subiendo bastantes recetas de cremas, aunque como podéis ver tampoco es algo tan complicado, siempre se repiten ciertos patrones, como el hecho de tener que cocer de alguna manera ingredientes que requieren cocción para quedar cremosos y comestibles (patata, boniato, cabalabaza, etc) y batirlo todo junto. Básicamente se hacen todas las cremas igual, aunque se puede cambiar el método de cocción del ingrediente principal (u otros) por asado al horno, al vapor, etc., para después incorporarlo a un sofrito o caldo y batirlo para crear la crema. Es muy sencillo, así que si nunca has hecho una crema ¡ya puedes empezar! ;)</p>
+		</article>
+		<aside>
+
+		</aside>
+	</main>
+    <include src="./views/_footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
   </body>
 </html>
