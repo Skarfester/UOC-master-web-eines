@@ -1,0 +1,117 @@
+// ******************************************************************
+// ESTILS VISUALS
+// ******************************************************************
+
+// IMPORTS
+@use 'sass:color';
+
+// MIXINS
+@mixin dark-mode {
+	@media (prefers-color-scheme: dark) { @content }
+}
+
+// VARIABLES
+// Tipografíes
+$font-header: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+
+// Colors tema clar
+$page: #F1FFF1;
+$back: #C4F0C5;
+$block: #6F9A8D;
+$accent: #ec7a7a;
+// verd més fosc #1F6650
+$accent-txt: #b05d5d;
+// Colors tema fosc
+$dk-page: #384238;
+$dk-back: #768576;
+$dk-block: #3f523f;
+$dk-accent: #8e4d4d;
+$dk-accent-txt: #ff9292;
+
+// BLOCS
+// Principals
+body {
+	background-color: $back;
+	color: black;
+
+	@include dark-mode {
+		background-color: $dk-back;
+		color: $page;
+	}
+}
+header, footer {
+	background-color: $block;
+
+	@include dark-mode {
+		background-color: $dk-block;
+	}
+}
+footer {
+	text-align: center;
+}
+main {
+	background-color: $page;
+
+	@include dark-mode {
+		background-color: $dk-page;
+	}
+}
+
+// Encapçalaments
+h1 {
+	text-align: center;
+	font-family: $font-header;
+	font-size: calc(2rem + 1vw);
+}
+h2 {
+	font-family: $font-header;
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+	color: $accent-txt;
+
+	@include dark-mode {
+		color: $dk-accent-txt;
+	}
+}
+
+// Llistes
+ol {
+	background-color: $accent;
+
+	@include dark-mode {
+		background-color: $dk-accent;
+		//color: black;
+	}
+}
+
+
+
+a {
+	color: $accent-txt;
+	@include dark-mode {
+		color: $dk-accent-txt;
+	}
+}
+
+// MODE FOSC
+/* @media (prefers-color-scheme: dark) {
+	body {
+		background-color: $dk-back;
+		color: $page;
+	}
+	header, footer {
+		background-color: $dk-block;
+	}
+	main {
+		background-color: $dk-page;
+	}
+	ol {
+		background-color: $dk-back;
+	}
+	a {
+		color: $dk-accent;
+	}
+	h2 {
+		color: $dk-accent-txt;
+	}
+} */

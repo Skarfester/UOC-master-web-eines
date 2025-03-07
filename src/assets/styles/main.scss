@@ -1,30 +1,15 @@
-/**
- * Use this file to import partials.
- * Do not include SCSS code in this file.
- */
+// ESTILS BASE
+// Resets i estils per defecte de la pàgina
+@use "base";
 
-/**
- * Import variables
- */
+// VARIABLES
+// Les variables es carreguen en els fulls (parcials) que les necessitin
+//@use "variables";
 
-@import "variables";
+// LAYOUTS
+// Estructura i distribució del blocs, marges i mides
+@use "layouts/home";
 
-/**
- * Import npm dependencies
- * see: https://v2.parceljs.org/features/module-resolution/
- * see commented examples below
- */
-
-// @import "some-node-module";
-// @import "@some-company/some-node-module";
-@import "npm:@fortawesome/fontawesome-free/css/all.css";
-/**
- * Import layouts
- * It's a best practice to use a different partial for each page
- */
-
-@import "layouts/home";
-
-/**
- * Do NOT include anything else in this file!
- */
+// ESTILS VISUALS, TEMA
+// Tipografíes, colors, decoracions, animacions...
+@use "theme";

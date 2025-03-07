@@ -1,0 +1,33 @@
+// ******************************************************************
+// RESETS I ESTILS BASE
+// ******************************************************************
+
+// Mixins
+@mixin reset {
+	margin: 0;
+    padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	font-size: 16px;
+    line-height: 1.5;
+	@include reset;
+}
+header, footer, main {
+	overflow: auto;
+}
+
+ol {
+	list-style: none;
+}
+// eliminem subratllat per a ratolí
+@media (hover: hover) {
+	a:not(:hover) {
+	  text-decoration: none;
+	}
+  }
