@@ -4,50 +4,100 @@
 
 // IMPORTS
 @use 'sass:color';
+@use "variables" as *;
 
 // MIXINS
 @mixin dark-mode {
 	@media (prefers-color-scheme: dark) { @content }
 }
+@mixin shadow ($color: black){
+	text-shadow: 1px 1px 3px $color;
+}
 
 // VARIABLES
 // Tipografíes
 $font-header: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+$txt-petit: .9rem;
 
 // Colors tema clar
 $page: #F1FFF1;
 $back: #C4F0C5;
 $block: #6F9A8D;
 $accent: #ec7a7a;
-// verd més fosc #1F6650
 $accent-txt: #b05d5d;
+$text: black;
+
 // Colors tema fosc
-$dk-page: #384238;
-$dk-back: #768576;
-$dk-block: #3f523f;
+$dk-page: #2e362e;
+$dk-back: #6c7a6c;
+$dk-block: #384938;
 $dk-accent: #8e4d4d;
 $dk-accent-txt: #ff9292;
+
+// ESTILS BASE
+// Enllaços (cal posar-lo abans que 'footer a')
+a {
+	color: $accent-txt;
+	@include dark-mode {
+		color: $dk-accent-txt;
+	}
+}
 
 // BLOCS
 // Principals
 body {
 	background-color: $back;
-	color: black;
+	color: $text;
 
 	@include dark-mode {
 		background-color: $dk-back;
 		color: $page;
 	}
 }
-header, footer {
+header {
+	border-bottom: solid 5px color.adjust($block, $lightness: -10%);
+	background-image: url('../images/cap.avif?as=jpeg&width=1200'); // fallback
+	background-image: image-set(url('../images/cap.avif?width=1200') 1x, url('../images/cap.avif') 2x);
+	background-repeat: no-repeat;
 	background-color: $block;
+	background-size: cover;
+	background-position: top right;
+	@include shadow($color: white);
 
 	@include dark-mode {
+		border-bottom: solid 5px color.adjust($dk-block, $lightness: -8%);
 		background-color: $dk-block;
+		color: white;
+		@include shadow;
+		filter: brightness(.9);
+	}
+
+	@media screen and (max-width: $tablet) {
+		background-image: image-set(url('../images/cap-tb.avif?width=800') 1x, url('../images/cap-tb.avif') 2x);
+	}
+
+	@media screen and (max-width: $mobile) {
+		background-image: image-set(url('../images/cap-mb.avif?width=500') 1x, url('../images/cap-mb.avif') 2x);
 	}
 }
 footer {
 	text-align: center;
+	font-size: $txt-petit;
+	border-top: solid 5px color.adjust($block, $lightness: -10%);
+	background-color: $block;
+
+	a {
+		color: $text;
+
+		@include dark-mode {
+			color: $page;
+		}
+	}
+
+	@include dark-mode {
+		border-top: solid 5px color.adjust($dk-block, $lightness: -8%);
+		background-color: $dk-block;
+	}
 }
 main {
 	background-color: $page;
@@ -65,53 +115,58 @@ h1 {
 }
 h2 {
 	font-family: $font-header;
+	white-space: nowrap;
 	margin-top: 3rem;
 	margin-bottom: 1.5rem;
-	color: $accent-txt;
+}
+
+// Blocs per classe
+.foli {
+	text-align: right;
+	font-size: $txt-petit;
+}
+.svg-article {
+	color: $block;
+	display: block;
+	margin: 0 auto;
 
 	@include dark-mode {
-		color: $dk-accent-txt;
+		color: $dk-block;
 	}
 }
 
-// Llistes
-ol {
-	background-color: $accent;
+// MODIFICADORS
+.el--labelize {
+	background: linear-gradient($accent, $accent-txt);
+	color: grayscale($page);
+	@include shadow($color: $dk-page);
+	padding: .4rem 2rem;
+	border-radius: 8px;
 
 	@include dark-mode {
-		background-color: $dk-accent;
+		background: linear-gradient($dk-accent-txt -50%, $dk-accent);
+	}
+}
+.el--requadre {
+	background: linear-gradient(to right, $block, $page 75%);
+	padding: 1rem 2rem;
+	border-radius: 8px;
+
+	@include dark-mode {
+		background: linear-gradient(to right, $dk-block, $dk-page 75%);
 		//color: black;
 	}
 }
+.img--decor {
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px $dk-block;
+	transition: transform 1s ease-out;
 
-
-
-a {
-	color: $accent-txt;
 	@include dark-mode {
-		color: $dk-accent-txt;
+		filter: brightness(.9);
+	}
+
+	&:hover {
+		transform: scale(1.1);
 	}
 }
-
-// MODE FOSC
-/* @media (prefers-color-scheme: dark) {
-	body {
-		background-color: $dk-back;
-		color: $page;
-	}
-	header, footer {
-		background-color: $dk-block;
-	}
-	main {
-		background-color: $dk-page;
-	}
-	ol {
-		background-color: $dk-back;
-	}
-	a {
-		color: $dk-accent;
-	}
-	h2 {
-		color: $dk-accent-txt;
-	}
-} */

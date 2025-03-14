@@ -2,9 +2,10 @@
 // HOME LAYOUT
 // ******************************************************************
 
-// breakpoints
+// IMPORTS (breakpoints)
 @use "../variables" as *;
 
+// BLOCS
 // Als blocs únics no els hi poso classe
 main, header, footer {
 	width: 95%;
@@ -12,7 +13,47 @@ main, header, footer {
 	margin-inline: auto;
 	padding-inline: 6vw;
 	padding-block: 2rem;
+	
 	@media screen and (max-width: $mobile) {
 		width: 100%;
+	}
+}
+.img-article {
+	padding-block: 2rem;
+
+	@media screen and (max-width: $mobile) {
+		padding-inline: 0;
+	}
+}
+.img-article > img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 3/1;
+	object-fit: cover;
+	object-position: center;
+}
+.db-col {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+
+	@media screen and (max-width: $tablet) {
+		flex-flow: column;
+	}
+}
+
+// ELEMENTS
+.db-col__elm {
+	flex: 1;
+}
+.db-col__elm > img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1.5;
+	object-fit: cover;
+	object-position: center;
+
+	@media screen and (min-width: $tablet) and (max-width: 960px) {
+		aspect-ratio: 1;
 	}
 }

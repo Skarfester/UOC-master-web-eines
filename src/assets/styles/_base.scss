@@ -20,10 +20,15 @@ body {
 }
 header, footer, main {
 	overflow: auto;
+	@include reset;
 }
 
 ol {
 	list-style: none;
+	padding-left: 2rem;
+}
+ul {
+	padding-left: 2rem;
 }
 // eliminem subratllat per a ratolí
 @media (hover: hover) {
