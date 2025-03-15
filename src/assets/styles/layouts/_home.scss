@@ -20,10 +20,6 @@ main, header, footer {
 }
 .img-article {
 	padding-block: 2rem;
-
-	@media screen and (max-width: $mobile) {
-		padding-inline: 0;
-	}
 }
 .img-article > img {
 	width: 100%;
